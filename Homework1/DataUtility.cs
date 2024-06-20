@@ -42,7 +42,7 @@ namespace Homework1
         }
 
         /// <summary>
-        /// Проверяет строку на <c>null</c>
+        /// Проверяет строку на <c>null</c>, убирает лишние пробелы
         /// </summary>
         /// <param name="value">Входящая строка</param>
         /// <returns>Возвращает строку (либо <c>null</c>, если строка пустая)</returns>
