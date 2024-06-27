@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            // Получаем объект с введёнными пользователем числами
             MathOperations operations = GetInputNumbers();
 
             MathActions(operations);
@@ -55,11 +56,13 @@
             Console.WriteLine($"9 - {_actionsMapper[ConsoleKey.D9]}");
             Console.WriteLine($"0 - {_actionsMapper[ConsoleKey.D0]}");
 
+            // Флажок, который указывает, правильная ли была нажата клавиша выбора действия
             bool isKeyCorrect;
 
             do
             {
                 ConsoleKeyInfo key = Console.ReadKey(true);
+                // По умолчанию считаем, что клавиша верна
                 isKeyCorrect = true;
 
                 switch (key.Key)
@@ -200,6 +203,7 @@
                         break;
 
                     default:
+                        // Если ни один из кейсов не прошёл, значи клавиша нажата неверная. Запрашиваем клавишу от пользователя заново
                         isKeyCorrect = false;
                         break;
                 }
