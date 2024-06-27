@@ -156,12 +156,23 @@
 
                         Console.WriteLine($"Выбранная операция: {_actionsMapper[key.Key]}");
 
-                        Console.WriteLine(
-                            $"Число {y} составляет {operations.Percent(OperationMode.FirstX)}% от числа {x}"
-                        );
-                        Console.WriteLine(
-                            $"Число {x} составляет {operations.Percent(OperationMode.FirstY)}% от числа {y}"
-                        );
+                        if (x == 0)
+                            Console.WriteLine(
+                                $"Невозможно определить, какой процент составляет Y составялет от X (т.к. X = 0)"
+                            );
+                        else
+                            Console.WriteLine(
+                                $"Число {y} составляет {operations.Percent(OperationMode.FirstX)}% от числа {x}"
+                            );
+
+                        if (y == 0)
+                            Console.WriteLine(
+                                $"Невозможно определить, какой процент составляет X составялет от Y (т.к. Y = 0)"
+                            );
+                        else
+                            Console.WriteLine(
+                                $"Число {x} составляет {operations.Percent(OperationMode.FirstY)}% от числа {y}"
+                            );
 
                         Console.WriteLine("Нажмите любую клавишу для продолжения");
                         Console.ReadKey(true);

@@ -112,8 +112,21 @@ namespace Homework3
         /// </summary>
         /// <param name="mode">Определяет, от какого числа отсчитывается процент второго числа</param>
         /// <returns></returns>
-        public double Percent(OperationMode mode) =>
-            (mode == OperationMode.FirstX) ? Y * 100 / X : X * 100 / Y;
+        public double Percent(OperationMode mode)
+        {
+            if (mode == OperationMode.FirstX)
+                if (X == 0)
+                    throw new DivideByZeroException("Невозможно поделить на 0 (X = 0)");
+                else
+                    return Y * 100 / X;
+            else
+            {
+                if (Y == 0)
+                    throw new DivideByZeroException("Невозможно поделить на 0 (Y = 0)");
+                else
+                    return X * 100 / Y;
+            }
+        }
 
         /// <summary>
         /// <example>
