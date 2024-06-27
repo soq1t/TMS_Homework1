@@ -40,7 +40,7 @@ namespace Homework3
         /// <summary>
         /// Возвращает сумму <c>X</c> и <c>Y</c>
         /// </summary>
-        private double Sum() => X + Y;
+        public double Sum() => X + Y;
 
         /// <summary>
         /// <example>
@@ -57,14 +57,14 @@ namespace Homework3
         /// </example>
         /// </summary>
         ///
-        private double Substraction(OperationMode mode) =>
+        public double Substraction(OperationMode mode) =>
             (mode == OperationMode.FirstX) ? X - Y : Y - X;
 
         /// <summary>
         /// Возвращает результат умножения X на Y
         /// </summary>
         /// <returns></returns>
-        private double Multiplication() => X * Y;
+        public double Multiplication() => X * Y;
 
         /// <summary>
         /// <example>
@@ -83,7 +83,7 @@ namespace Homework3
         /// <param name="mode">Опредлеляет, какое число будет делиться на какое</param>
         /// <returns></returns>
         /// <exception cref="DivideByZeroException">ЧИсло, на которое производится деление, равно 0</exception>
-        private double Division(OperationMode mode)
+        public double Division(OperationMode mode)
         {
             if (mode == OperationMode.FirstX)
                 if (Y == 0)
@@ -112,7 +112,7 @@ namespace Homework3
         /// </summary>
         /// <param name="mode">Определяет, от какого числа отсчитывается процент второго числа</param>
         /// <returns></returns>
-        private double Percent(OperationMode mode) =>
+        public double Percent(OperationMode mode) =>
             (mode == OperationMode.FirstX) ? Y * 100 / X : X * 100 / Y;
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Homework3
         /// </summary>
         /// <param name="mode"></param>
         /// <returns></returns>
-        private double SquareRoot(OperationMode mode) =>
+        public double SquareRoot(OperationMode mode) =>
             (mode == OperationMode.FirstX) ? Math.Sqrt(X) : Math.Sqrt(Y);
         #endregion
     }
